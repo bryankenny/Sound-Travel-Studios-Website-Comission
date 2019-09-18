@@ -7,7 +7,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'Express' });
+  res.render('about');
+});
+
+router.get('/contact', function(req, res, next) {
+  res.render('contact');
+});
+
+router.get('/news', function(req, res, next) {
+  res.render('news');
 });
 
 /* GET Hello World page. */
