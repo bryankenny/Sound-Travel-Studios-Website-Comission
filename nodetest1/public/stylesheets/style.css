@@ -32,3 +32,11 @@ a {
   background-color: #4CAF50;
     color: white;
 }
+
+/* image */
+
+.picture img {
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
