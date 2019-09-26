@@ -18,9 +18,8 @@ router.get('/news', function(req, res, next) {
   res.render('news');
 });
 
-/* GET Hello World page. */
 router.get('/helloworld', function(req, res) {
-    res.render('helloworld', { title: 'Hello, World!' });
+    res.render('helloworld', { title: 'Testing Page' });
 });
 
 module.exports = router;
