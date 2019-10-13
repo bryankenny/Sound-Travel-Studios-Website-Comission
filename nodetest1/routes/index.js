@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 
 router.get('/about', function(req, res, next) {
@@ -28,7 +28,30 @@ router.get('/helloworld', function(req, res) {
 router.post('/sendEmail', function(req, res) {
   console.log('yo');
   console.log(req.body.email);
-  res.render('contact');
+  let transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+          // should be replaced with real sender's account
+          user: 'soundtravelstudiovancouver@gmail.com',
+          pass: 'SoundTravVan123'
+      }
+  });
+  let mailOptions = {
+      // should be replaced with real recipient's account
+      to: 'soundtravelstudiovancouver@gmail.com',
+      subject: req.body.subject,
+      body: req.body.message
+  };
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+  });
+  res.writeHead(301, { Location: 'contact.ejs' });
+  res.end();
 })
 
 
