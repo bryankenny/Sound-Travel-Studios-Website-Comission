@@ -27,6 +27,7 @@ router.get('/helloworld', function(req, res) {
 
 router.post('/sendEmail', function(req, res) {
   console.log('yo');
+  console.log(req.body.email);
   res.render('contact');
 })
 
