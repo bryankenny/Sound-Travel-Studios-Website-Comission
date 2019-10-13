@@ -1,5 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -23,7 +26,8 @@ router.get('/helloworld', function(req, res) {
 });
 
 router.post('/sendEmail', function(req, res) {
-  console.log('yo')
+  console.log('yo');
+  res.render('contact');
 })
 
 
