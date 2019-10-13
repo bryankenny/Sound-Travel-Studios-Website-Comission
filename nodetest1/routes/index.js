@@ -22,5 +22,9 @@ router.get('/helloworld', function(req, res) {
     res.render('helloworld', { title: 'Testing Page' });
 });
 
+router.post('/sendEmail', function(req, res) {
+  console.log('yo')
+})
+
 
 module.exports = router;
