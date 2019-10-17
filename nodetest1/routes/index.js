@@ -5,6 +5,7 @@ const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const bodyParser = require('body-parser');
 
+// OAuth2 information
 const oauth2Client = new OAuth2(
      "739705801404-4j2jq52ln72f0c0c1hja46s892siuhc6.apps.googleusercontent.com",
      "qIliyCcBqRMH7_KKDBpVoar9",
@@ -16,7 +17,7 @@ oauth2Client.setCredentials({
 });
 const accessToken = oauth2Client.getAccessToken()
 
-/* GET home page. */
+// GET routes
 router.get('/', function(req, res, next) {
   res.render('index');
 });
@@ -37,6 +38,7 @@ router.get('/helloworld', function(req, res) {
     res.render('helloworld', { title: 'Testing Page' });
 });
 
+//nodemailer
 router.post('/sendEmail', function(req, res) {
   console.log('yo');
   console.log(req.body.email);
