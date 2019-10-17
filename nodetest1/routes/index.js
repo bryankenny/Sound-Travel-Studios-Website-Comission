@@ -50,8 +50,7 @@ router.post('/sendEmail', function(req, res) {
       }
       console.log('Message %s sent: %s', info.messageId, info.response);
   });
-  res.writeHead(301, { Location: 'contact.ejs' });
-  res.end();
+  res.render('contact');
 })
 
 
