@@ -1,8 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
+const { google } = require("googleapis");
+const OAuth2 = google.auth.OAuth2;
 const bodyParser = require('body-parser');
 
+const oauth2Client = new OAuth2(
+     "739705801404-4j2jq52ln72f0c0c1hja46s892siuhc6.apps.googleusercontent.com",
+     "qIliyCcBqRMH7_KKDBpVoar9",
+     "https://developers.google.com/oauthplayground"
+);
+
+oauth2Client.setCredentials({
+     refresh_token: "1//044wmb0IwcMCJCgYIARAAGAQSNwF-L9Ir0EFK1V-D4z8MAOic7PVwU2TmswYJ8LsH35A9wodmxit57QpKZu6019XsDIsDCLpC1kk"
+});
+const accessToken = oauth2Client.getAccessToken()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -29,17 +41,17 @@ router.post('/sendEmail', function(req, res) {
   console.log('yo');
   console.log(req.body.email);
   let transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
-      auth: {
-          // should be replaced with real sender's account
-          user: 'soundtravelstudiovancouver@gmail.com',
-          pass: 'SoundTravVan123'
-      }
+     service: "gmail",
+     auth: {
+          type: "OAuth2",
+          user: "soundtravelstudiovancouver@gmail.com",
+          clientId: "739705801404-4j2jq52ln72f0c0c1hja46s892siuhc6.apps.googleusercontent.com",
+          clientSecret: "qIliyCcBqRMH7_KKDBpVoar9",
+          refreshToken: "1//044wmb0IwcMCJCgYIARAAGAQSNwF-L9Ir0EFK1V-D4z8MAOic7PVwU2TmswYJ8LsH35A9wodmxit57QpKZu6019XsDIsDCLpC1kk",
+          accessToken: accessToken
+     }
   });
   let mailOptions = {
-      // should be replaced with real recipient's account
       to: 'soundtravelstudiovancouver@gmail.com',
       subject: req.body.subject,
       body: req.body.message
