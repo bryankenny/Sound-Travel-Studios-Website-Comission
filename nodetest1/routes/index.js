@@ -11,7 +11,6 @@ const oauth2Client = new OAuth2(
      "qIliyCcBqRMH7_KKDBpVoar9",
      "https://developers.google.com/oauthplayground"
 );
-
 oauth2Client.setCredentials({
      refresh_token: "1//044wmb0IwcMCJCgYIARAAGAQSNwF-L9Ir0EFK1V-D4z8MAOic7PVwU2TmswYJ8LsH35A9wodmxit57QpKZu6019XsDIsDCLpC1kk"
 });
@@ -53,10 +52,11 @@ router.post('/sendEmail', function(req, res) {
           accessToken: accessToken
      }
   });
+  let emailSender = req.body.email;
   let mailOptions = {
       to: 'soundtravelstudiovancouver@gmail.com',
       subject: req.body.subject,
-      html: req.body.message
+      html: req.body.message,
   };
   transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
@@ -64,7 +64,7 @@ router.post('/sendEmail', function(req, res) {
       }
       console.log('Message %s sent: %s', info.messageId, info.response);
   });
-  res.render('contact');
+  res.render('index');
 })
 
 
