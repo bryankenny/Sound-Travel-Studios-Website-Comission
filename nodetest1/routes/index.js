@@ -54,9 +54,11 @@ router.post('/sendEmail', function(req, res) {
   });
   let emailSender = req.body.email;
   let mailOptions = {
+      from: req.body.email,
       to: 'soundtravelstudiovancouver@gmail.com',
       subject: req.body.subject,
       html: req.body.message,
+      sender: req.body.email,
   };
   transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
