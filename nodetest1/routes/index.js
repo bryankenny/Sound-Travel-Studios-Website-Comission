@@ -33,8 +33,8 @@ router.get('/news', function(req, res, next) {
   res.render('news');
 });
 
-router.get('/helloworld', function(req, res) {
-    res.render('helloworld', { title: 'Testing Page' });
+router.get('/artistPage', function(req, res) {
+    res.render('artistPage', { title: 'Teja Sangha Voice Acting' });
 });
 
 //nodemailer
