@@ -1,6 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300);
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 20px 80px;
+  background: #eee url(https://subtlepatterns.com/patterns/extra_clean_paper.png);
 }
 
 a {
@@ -45,11 +47,57 @@ a {
 }
 
 .text {
-  font: 40px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 25px;
   padding-top: 10px;
-  padding-left: 50px;
+  padding-left: 180px;
   border: none;
   display: block;
   margin: 0 auto;
 }
+
+#mainPageText {
+  padding-left: 100px;
+  font-size: 18px;
+}
+
+/* artist page */
+
+#title {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Styling for the home page. This code was heavily sourced/inspired from this page of free css styling examples */
+
+#logo {
+  font-family: 'Open Sans', sans-serif;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: #EDEDED 3px 2px 0;
+  position: relative;
+}
+#logo:after {
+  content:"Sound Travel Studios";
+  position: absolute;
+  left: 8px;
+  top: 32px;
+}
+#logo:after {
+  /*background: url(https://subtlepatterns.com/patterns/crossed_stripes.png) repeat;*/
+  background-image: -webkit-linear-gradient(left top, transparent 0%, transparent 25%, #555 25%, #555 50%, transparent 50%, transparent 75%, #555 75%);
+  background-size: 4px 4px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -5;
+  display: block;
+  text-shadow: none;
+}
+
+
+
 
