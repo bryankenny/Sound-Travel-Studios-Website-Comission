@@ -67,7 +67,7 @@ a {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-/* Styling for the home page. This code was heavily sourced/inspired from this page of free css styling examples */
+/* Styling for the home page. This code was heavily sourced/inspired from this page of free css styling examples: https://envato.com/blog/css3-typography-code-snippets/; */
 
 #logo {
   font-family: 'Open Sans', sans-serif;
@@ -82,7 +82,7 @@ a {
   position: relative;
 }
 #logo:after {
-  content:"Sound Travel Studios";
+  content:"Sound Travel Studio";
   position: absolute;
   left: 8px;
   top: 32px;
