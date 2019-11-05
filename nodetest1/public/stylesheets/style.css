@@ -61,6 +61,10 @@ a {
   font-size: 18px;
 }
 
+#contactText {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 /* artist page */
 
 #title {
@@ -96,7 +100,7 @@ a {
   text-shadow: none;
 }
 
-/* Styling for the home page. This code was heavily sourced/inspired from this page of free css styling examples: https://envato.com/blog/css3-typography-code-snippets/; */
+/* Styling for the logo. This code was heavily sourced/inspired from this page of free css styling examples: https://envato.com/blog/css3-typography-code-snippets/; */
 
 #logo {
   font-family: 'Open Sans', sans-serif;
