@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const nodemon = require('nodemon');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
